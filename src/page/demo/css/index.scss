@@ -1,0 +1,83 @@
+// @import '../../../base/config.scss';
+code {
+	tab-size: 4;
+	font-size: 12px;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+// 弹性布局
+.box-layout {
+	display: -webkit-box;
+	.flex {
+		-webkit-box-flex: 1;
+		padding: 0 20px;
+	}
+}
+// 12 列布局
+.col-layout {
+	border: 1px solid transparent;
+	overflow: hidden;
+	%baseCol {
+		float: left;
+		padding: 0 10px;
+	}
+	@for $i from 1 to 13 {
+		.col-#{$i} {
+			@extend %baseCol;
+			width: $i/12*100%;
+		}
+	}
+}
+// 凸显列表：列表的最后一项高亮，其它项灰色
+.reveal .nav-list {
+	display: block;
+	& > :not(:last-child) {
+		color: #585858;
+	}
+}
+.reveal ol,
+.reveal ul,
+.reveal dl {
+	margin: 0 0 .5em;
+	padding-right: 1.5em;
+	position: relative;
+	left: 1.5rem;
+}
+
+.tl {
+	text-align: left;
+}
+.tc {
+	text-align: center;
+}
+.big-img {
+	width: 70%;
+	display: block;
+	&.dib {
+		display: inline-block;
+	}
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	text-transform: none;
+}
+.cw {
+	color: #ff2c2d;
+}
+.bg-w {
+	background-color: #fff;
+}
+.reveal .db {
+	display: block;
+}
+.reveal .pl20 {
+	padding-left: 20px;
+}

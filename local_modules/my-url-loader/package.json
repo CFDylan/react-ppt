@@ -1,0 +1,13 @@
+{
+  "name": "my-url-loader",
+  "version": "0.5.7",
+  "author": {
+    "name": "Dylan"
+  },
+  "description": "change context before url-loader",
+  "dependencies": {
+    "url-loader": "0.5.x"
+  },
+  "license": "MIT",
+  "scripts": {}
+}
