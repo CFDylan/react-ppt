@@ -1,9 +1,9 @@
 ## 说明
-这是一个会使用React的前端工程师，打造的PPT制作框架。你可以下载此项目，然后，双击运行 `views_dev/demo.html` 在浏览器上查看效果。
+这是用 React.js + reveal.js，打造的PPT制作框架。你可以下载此项目，然后，双击运行 `views_dev/demo.html` 在浏览器上查看效果。或者，直接浏览[demo](http://120.76.140.150:4000/ppt "demo")
 
 ## 搭环境
 1. 下载完后，在项目的根目录，输入: `npm install`.
-2. 更灵活使用PPT插件：[http://lab.hakim.se/reveal-js/#/](http://lab.hakim.se/reveal-js/#/ "reveal-js")
+2. 更灵活使用PPT插件：[reveal.js](http://lab.hakim.se/reveal-js/#/ "reveal-js")
 
 
 ## 使用

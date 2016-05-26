@@ -42,7 +42,7 @@ const argv = yargs.argv,
     pluginName = typeof argv.plugin === 'string' ? argv.plugin : '';
 let dist = devDist,
     mode = 'dev',
-	minify = false; // webpack 编译的时候，是否压缩
+	minify = true; // webpack 编译的时候，是否压缩
 
 switch(type) {
     case 'dev':
