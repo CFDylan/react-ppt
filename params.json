@@ -1,0 +1,6 @@
+{
+  "name": "React-ppt",
+  "tagline": "a ppt framework build with react.js and reveal.js.",
+  "body": "## 说明\r\n这是用 React.js + reveal.js，打造的PPT制作框架。你可以下载此项目，然后，双击运行 `views_dev/demo.html` 在浏览器上查看效果。或者，直接浏览[demo](http://120.76.140.150:4000/ppt \"demo\")\r\n\r\n## 搭环境\r\n1. 下载完后，在项目的根目录，输入: `npm install`.\r\n2. 更灵活使用PPT插件：[reveal.js](http://lab.hakim.se/reveal-js/#/ \"reveal-js\")\r\n\r\n\r\n## 使用\r\n1. 新建一个ppt。在项目根目录用命令行输入：\r\n\r\n\t`gulp new --page {pptName}`\r\n2. 新建后，会生成 `src/page/[pptName]` 目录，我们主要看 js 目录下的文件：\r\n\t1. `index.js`, 入口文件\r\n\t2. `page_0.js`, PPT的第0页\r\n\t3. `page_1.js`, PPT的第1页\r\n\t4. `page_end.js`, PPT的最后1页\r\n\t5. `reveal.config.js`, PPT的配置\r\n3. 那么，怎么让PPT可以在浏览器看呢？\r\n\t1. 方法一，手动编译： `gulp dev`。编译完之后，就可以打开`views_dev/[pptName].html`在浏览器查看效果了。\r\n\t2. 方法二，实时编译： `gulp dev -h` . 这个时候，浏览器会打开 `localhost:3000`. 然后，你输入你要看的PPT名字，如： `localhost:3000/views_dev/[pptName].html`\r\n\r\n## 现有样式\r\n具体可以查看 `package/templates/page.scss`（可以自己拓展），这里介绍常用的5个：\r\n\r\n1. 标题：h1~h6\r\n2. class=\"fragment\" 的块，会被分块展示。\r\n3. 弹性盒子布局： `.box-layout` 及其一个弹性子元素 `.flex`\r\n4. 经典12列布局： `.col-layout` 及其子元素 `.col-N`（N取值：1~12）\r\n5. 凸显列表： `.nav-list`。列表的最后一项高亮，其它项灰色。\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
