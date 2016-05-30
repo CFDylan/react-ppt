@@ -4,7 +4,7 @@ require('base/theme/black.css');
 var config = {
 	controls: true, // Display controls in the bottom right corner
 	progress: false, // Display a presentation progress bar
-	history: true, // Push each slide change to the browser history
+	history: false, // Push each slide change to the browser history
 	center: true, // Vertical centering of slides
 	width: 1200,
 	height: 700,
