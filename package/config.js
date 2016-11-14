@@ -9,7 +9,7 @@
 const path = require('path'),
     fs = require('fs'),
 	yargs = require('yargs'),
-	root = alias.path('@root'),
+	root = path.join(__dirname, '..'),
 	proName = 'ppt';
 
 // const vhost = 'localhost:4000'; // 该项目的虚拟主机名
@@ -25,24 +25,24 @@ const src =  {
 
 const devDist = {
     path: path.join(root, 'asset/dev'),
-    publicPath: '/asset/dev/'
+    publicPath: '../asset/dev/'
 };
 
 const proDist = {
     path: path.join(root, `asset/${proName}`),
-	publicPath: `/asset/${proName}/`,
+	publicPath: `../asset/${proName}/`,
 	views: path.join(root, 'views')
 };
 
 const argv = yargs.argv,
-    type = argv._[0],
+    type = argv._[0] || 'dev',
 	watch = argv.w, // watch
     hot = argv.h, // watch + reload
 	pageName = typeof argv.page === 'string' ? argv.page : '',
     pluginName = typeof argv.plugin === 'string' ? argv.plugin : '';
 let dist = devDist,
     mode = 'dev',
-	minify = true; // webpack 编译的时候，是否压缩
+	minify = false; // webpack 编译的时候，是否压缩
 
 switch(type) {
     case 'dev':
@@ -71,6 +71,8 @@ const config = {
 	pageName: pageName,
     pluginName: pluginName,
     minify: minify,
+    root,
+    templates: path.join(__dirname, 'templates'),
     // src
     src: src,
     // dist

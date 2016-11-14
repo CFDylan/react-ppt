@@ -1,14 +1,22 @@
 import rConfig from './reveal.config.js';
 import '../css/index.scss';
-import P0 from './page_0'; // 首页
-import P1 from './page_1'; // 目录
-import P2 from './page_2'; // 第一章：布局
-import P3 from './page_3'; // 布局：弹性盒子
-import P4 from './page_4'; // 布局：12列
-import P5 from './page_5'; // 第二章：分步浏览
-import P6 from './page_6'; // 第三章：子页
-import P7 from './page_7'; // 第四章：常用样式
-import PEnd from './page_end';
+
+// url 的 search 中包含 print-pdf 参数，则启用打印 pdf 排版。
+import pdfCss from '!raw!sass!../css/pdf.scss';
+const search = window.location.search;
+if (/\bprint-pdf\b/i.test(search)) {
+    const head = document.querySelector('head'),
+        style = document.createElement('style');
+    style.innerHTML = pdfCss;
+    head.appendChild(style);
+}
+
+const pagesReq = require.context('./', true, /^\.\/page_.*\.js$/);
+// 按照字母升序依赖所有页面
+const pages = pagesReq.keys().sort().map( pageName => {
+    return pagesReq(pageName);
+});
+
 
 const Page = React.createClass({
 	getInitialState() {
@@ -17,19 +25,18 @@ const Page = React.createClass({
 	componentDidMount() {
 		Reveal.initialize(rConfig);
 		hljs.initHighlighting();
+		zoom.init();
 	},
 	render() {
 		return (
 			<div className="slides">
-				<P0 />
-				<P1 />
-				<P2 />
-				<P3 />
-				<P4 />
-				<P5 />
-				<P6 />
-				<P7 />
-				<PEnd />
+				{
+                    pages.map( (page, index) => {
+                        return React.createElement(page, {
+                            key: `page_${index}`
+                        });
+                    })
+                }
 			</div>
 		);
 	}

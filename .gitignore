@@ -1,3 +1,4 @@
 /node_modules/*
-!/node_modules/node-sass.zip
 /*.log
+.DS_Store
+.idea

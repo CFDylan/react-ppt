@@ -1,25 +1,13 @@
-/*
- * @Author: dylan
- * @Date:   2015-11-12 15:44:00
- * @Last Modified by:   dylan
- * @Last Modified time: 2016-01-10 11:08:11
- */
-
 'use strict';
-const path = require('path'),
-    fs = require('fs'),
-    webpack = require('webpack'),
-    config = alias.require('@config'),
-	SRC = config.src,
-	DIST = config.dist,
-	pageName = config.pageName,
-    Tools = alias.require('@tools'),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
-// var md5 = config.md5 ? '_[chunkhash:5]' : '',
-const md5 = '', // css && js 的 md5 交给gulp处理
-    cssExtract = new ExtractTextPlugin('css', '[name]/index' + md5 + '.css');
+import path from 'path';
+import fs from 'fs';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
+import config, {src, dist, pageName} from './config';
+import Tools from './tools';
+
+const cssExtract = new ExtractTextPlugin('css', '[name]/index.css');
 let plugins = [cssExtract];
-config.minify && plugins.push(new webpack.optimize.UglifyJsPlugin());
 
 function getEntryMap(src) {
 	let enteryMap = {};
@@ -32,13 +20,14 @@ function getEntryMap(src) {
         enteryMap[entry] = entryPath;
     });
     return enteryMap;
-};
+}
+
 module.exports = {
-	entry: getEntryMap(SRC),
+	entry: getEntryMap(src),
     output: {
-        path: DIST.path, // 文件生成路径
-        publicPath: DIST.publicPath, // html/css/js中，文件引用路径的基准
-        filename: '[name]/index' + md5 + '.js'
+        path: dist.path, // 文件生成路径
+        publicPath: dist.publicPath, // html/css/js中，文件引用路径的基准
+        filename: '[name]/index.js'
     },
     module: {
         loaders: [{
@@ -50,9 +39,7 @@ module.exports = {
             loader: cssExtract.extract('css!sass?outputStyle=expanded')
 		}, {
 	        test: /\.(jpg|jpeg|png|svg|gif)$/i,
-	        loader: config.minify ?
-				'my-url?limit=102400000&name=[path][name]' + md5 + '.[ext]' : 
-				'my-url?limit=8192&name=[path][name]' + md5 + '.[ext]' // name=后面，是生成后的图片文件的 路径+名字
+	        loader: 'my-url?limit=8192&name=[path][name].[ext]' // name=后面，是生成后的图片文件的 路径+名字
 	    }, {
             test: /\.jsx?$/i,
             loader: 'babel',
@@ -65,8 +52,8 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.scss'],
         alias: { // 路径配置
-            'plugin': SRC.plugin,
-            'base': SRC.base
+            'plugin': src.plugin,
+            'base': src.base
         }
     },
     plugins: plugins

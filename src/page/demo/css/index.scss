@@ -1,83 +1,132 @@
-// @import '../../../base/config.scss';
-code {
-	tab-size: 4;
-	font-size: 12px;
-}
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-// 弹性布局
-.box-layout {
-	display: -webkit-box;
-	.flex {
-		-webkit-box-flex: 1;
-		padding: 0 20px;
+@import '~base/config.scss';
+.reveal {
+	code {
+		tab-size: 4;
 	}
-}
-// 12 列布局
-.col-layout {
-	border: 1px solid transparent;
-	overflow: hidden;
-	%baseCol {
-		float: left;
-		padding: 0 10px;
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
 	}
-	@for $i from 1 to 13 {
-		.col-#{$i} {
-			@extend %baseCol;
-			width: $i/12*100%;
+	// 弹性布局
+	.flex-layout {
+		display: flex;
+		.flex {
+			flex: 1;
+			padding-left: 2em;
+            &:first-child {
+                padding-left: 0;
+                padding-right: 2em;
+            }
 		}
 	}
-}
-// 凸显列表：列表的最后一项高亮，其它项灰色
-.reveal .nav-list {
-	display: block;
-	& > :not(:last-child) {
-		color: #585858;
+	// 12 列布局
+	.col-layout {
+		border: 1px solid transparent;
+		overflow: hidden;
+		%baseCol {
+			float: left;
+			padding: 0 10px;
+		}
+		@for $i from 1 to 13 {
+			.col-#{$i} {
+				@extend %baseCol;
+				width: $i/12*100%;
+			}
+		}
 	}
-}
-.reveal ol,
-.reveal ul,
-.reveal dl {
-	margin: 0 0 .5em;
-	padding-right: 1.5em;
-	position: relative;
-	left: 1.5rem;
-}
-
-.tl {
-	text-align: left;
-}
-.tc {
-	text-align: center;
-}
-.big-img {
-	width: 70%;
-	display: block;
-	&.dib {
-		display: inline-block;
+	// 凸显列表：列表的最后一项高亮，其它项灰色
+	.nav-list {
+		display: block;
+		& > :not(:last-child) {
+			color: $colorHint;
+		}
+		// 但是，遇到 fragment 的时候，当前 fragment 项也高亮。
+		& > .fragment.current-fragment {
+            color: $colorNormal;
+		}
 	}
-}
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-	text-transform: none;
-}
-.cw {
-	color: #ff2c2d;
-}
-.bg-w {
-	background-color: #fff;
-}
-.reveal .db {
-	display: block;
-}
-.reveal .pl20 {
-	padding-left: 20px;
+	ol,
+	ul,
+	dl {
+		margin: 0 0 .5em;
+		padding-right: 1.5em;
+		position: relative;
+		left: 1.5em;
+	}
+
+	.tl {
+		text-align: left;
+	}
+	.tc {
+		text-align: center;
+	}
+	.tr {
+		text-align: right;
+	}
+	.big-img {
+		width: 70%;
+		display: block;
+		&.dib {
+			display: inline-block;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-transform: none;
+	}
+	.ch {
+		color: $colorHint;
+	}
+	.cw {
+		color: $colorWarning;
+	}
+
+	// 步骤图
+	.steps {
+		list-style-type: none;
+		overflow: hidden;
+		padding: 50px 0 0;
+		position: static;
+		& > .one-step {
+			float: left;
+			border: $bd;
+			color: $colorHint;
+			border-color: $colorHint;
+			width: 30%;
+			height: 200px;
+			margin: 0 5% 50px 0;
+			padding: 20px;
+			&:nth-child(3n) {
+				margin-right: 0;
+			}
+			&.current-fragment,
+			&:last-child {
+				color: $colorNormal;
+				border-color: $colorNormal;
+			}
+		}
+		&.steps-free {
+			padding: 0;
+			& > .one-step {
+				border: none;
+				padding: 0;
+				height: auto;
+			}
+		}
+	}
+	// 只显示最后一步
+	.one-by-one > .fragment {
+		display: none;
+		&.current-fragment,
+		&:last-child {
+			display: block;
+		}
+	}
 }
