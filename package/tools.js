@@ -1,10 +1,9 @@
 'use strict';
 
-const fs = require('fs'),
-    path = require('path'),
-    gutil = require('gulp-util'),
-    root = alias.path('@root'),
-    templates = alias.path('@templates');
+import fs from 'fs';
+import path from 'path';
+import gutil from 'gulp-util';
+import {root, templates} from './config';
 
 let fileTree = {
     'src': {
@@ -100,13 +99,14 @@ let T = {
             js: {
                 'index.js': self.getFileContent(templates + '/page.js')
                     .replace(/xxx/g, name).replace(/Xxx/g, self.upperFirstLetter(name)),
-				'page_0.js': self.getFileContent(templates + '/sub_page_0.js'),
-				'page_1.js': self.getFileContent(templates + '/sub_page_1.js'),
+				'page_00.js': self.getFileContent(templates + '/sub_page_0.js'),
+				'page_01.js': self.getFileContent(templates + '/sub_page_1.js'),
 				'page_end.js': self.getFileContent(templates + '/sub_page_end.js'),
 				'reveal.config.js': self.getFileContent(templates + '/reveal.config.js'),
             },
             css: {
-                'index.scss': self.getFileContent(templates + '/page.scss').replace(/xxx/g, name)
+                'index.scss': self.getFileContent(templates + '/page.scss').replace(/xxx/g, name),
+                'pdf.scss': self.getFileContent(templates + '/pdf.scss')
             }
         };
         fileTree['views_dev'][name + '.html'] = self.getFileContent(templates + '/page.html').replace(/xxx/g, name);

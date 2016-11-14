@@ -23,7 +23,7 @@ var assign = _dereq_(23);
 var deprecated = _dereq_(105);
 
 // `version` will be added here by ReactIsomorphic.
-var React = {};
+window.React = {};
 
 assign(React, ReactIsomorphic);
 
@@ -18599,7 +18599,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- * 
+ *
  */
 
 'use strict';

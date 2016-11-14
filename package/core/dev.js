@@ -12,7 +12,10 @@ const config = alias.require('@config'),
 
 // Static Server + watching
 gulp.task('core.dev:hot', () => {
-	let serveCfg = {};
+	let serveCfg = {
+		ui: false,
+		startPath: '/views_dev/'
+	};
 	if (typeof config.vhost === 'string' && config.vhost.trim().length > 1) {
 		serveCfg.proxy = config.vhost;
 	} else {
