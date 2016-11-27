@@ -13,7 +13,8 @@
 	3. `page_10.js`, PPT的第1页
 	4. `page_end.js`, PPT的最后1页
 	5. `reveal.config.js`, PPT的配置
-3. 那么，怎么让PPT可以在浏览器看呢？
+3. 如果你需要新增 PPT 页面，请用 `page_xx.js` 命名，这样，生成最终 PPT 的时候会自动根据 xx 升序依赖。
+4. 那么，怎么让PPT可以在浏览器看呢？
 	1. 方法一，手动编译： `gulp dev`。编译完之后，就可以打开`views_dev/[pptName].html`在浏览器查看效果了。
 	2. 方法二，实时编译： `gulp dev -h` . 这个时候，浏览器会打开 `localhost:3000/views_dev/`. 然后，你输入你要看的PPT名字，如： `localhost:3000/views_dev/[pptName].html`
 
