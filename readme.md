@@ -34,5 +34,3 @@
 3. 选择
     - 边距：无
     - 选项：背景图形（打勾）
-
-    ![image](http://ohazhz8mu.bkt.clouddn.com/QQ20161127-1@2x.png)
