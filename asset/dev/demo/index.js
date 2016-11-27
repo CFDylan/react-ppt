@@ -52,7 +52,7 @@
 
 	__webpack_require__(4);
 
-	var _pdf = __webpack_require__(15);
+	var _pdf = __webpack_require__(5);
 
 	var _pdf2 = _interopRequireDefault(_pdf);
 
@@ -223,110 +223,7 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	"use strict";
-
-	var page = React.createClass({
-		displayName: "page",
-
-		render: function render() {
-			return React.createElement(
-				"section",
-				{ className: "tl" },
-				React.createElement(
-					"h1",
-					null,
-					"THE END"
-				),
-				React.createElement(
-					"div",
-					null,
-					"\u53C2\u8003\u8D44\u6599"
-				),
-				React.createElement(
-					"div",
-					{ className: "col-layout" },
-					React.createElement(
-						"ul",
-						{ className: "col-6" },
-						React.createElement(
-							"li",
-							null,
-							"\u300AHTTP \u6743\u5A01\u6307\u5357\u300B"
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "http://blog.csdn.net/hguisu/article/details/8608888", target: "_blank" },
-								"HTTP\u8BE6\u89E3(3)-http1.0 \u548Chttp1.1 \u533A\u522B"
-							)
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "http://mrpeak.cn/blog/http2/", target: "_blank" },
-								"HTTP 2.0\u7684\u90A3\u4E9B\u4E8B"
-							)
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "https://www.zhihu.com/question/34074946", target: "_blank" },
-								"HTTP/2.0 \u76F8\u6BD41.0\u6709\u54EA\u4E9B\u91CD\u5927\u6539\u8FDB\uFF1F"
-							)
-						)
-					),
-					React.createElement(
-						"ul",
-						{ className: "col-6" },
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "http://www.jianshu.com/p/52d86558ca57/comments/3560156", target: "_blank" },
-								"\u9762\u8BD5\u65F6\u5982\u4F55\u4F18\u96C5\u7684\u8C08\u8BBAHTTP\uFF0F1.0\uFF0F1.1\uFF0F2.0"
-							)
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "http://www.alloyteam.com/2016/03/discussion-on-web-caching/", target: "_blank" },
-								"\u6D45\u8C08Web\u7F13\u5B58"
-							)
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "https://my.oschina.net/ososchina/blog/494074", target: "_blank" },
-								"HTTP 304/200(from cache) \u9759\u6001\u8D44\u6E90\u7F13\u5B58\u539F\u7406"
-							)
-						),
-						React.createElement(
-							"li",
-							null,
-							React.createElement(
-								"a",
-								{ href: "http://www.ruanyifeng.com/blog/2016/06/dns.html", target: "_blank" },
-								"DNS \u539F\u7406\u5165\u95E8"
-							)
-						)
-					)
-				)
-			);
-		}
-	});
-
-	module.exports = page;
+	module.exports = "/**\n * This stylesheet is used to print reveal.js\n * presentations to PDF.\n *\n * https://github.com/hakimel/reveal.js#pdf-export\n */\n* {\n  -webkit-print-color-adjust: exact; }\n\nbody {\n  margin: 0 auto !important;\n  border: 0;\n  padding: 0;\n  float: none !important;\n  overflow: visible; }\n\nhtml {\n  width: 100%;\n  height: 100%;\n  overflow: visible; }\n\n/* Remove any elements not needed in print. */\n.nestedarrow,\n.reveal .controls,\n.reveal .progress,\n.reveal .playback,\n.reveal.overview,\n.fork-reveal,\n.share-reveal,\n.state-background {\n  display: none !important; }\n\nh1, h2, h3, h4, h5, h6 {\n  text-shadow: 0 0 0 #000 !important; }\n\n.reveal pre code {\n  overflow: hidden !important;\n  font-family: Courier, 'Courier New', monospace !important; }\n\nul, ol, div, p {\n  visibility: visible;\n  position: static;\n  width: auto;\n  height: auto;\n  display: block;\n  overflow: visible;\n  margin: auto; }\n\n.reveal {\n  width: auto !important;\n  height: auto !important;\n  overflow: hidden !important; }\n\n.reveal .slides {\n  position: static;\n  width: 100%;\n  height: auto;\n  left: auto;\n  top: auto;\n  margin: 0 !important;\n  padding: 0 !important;\n  overflow: visible;\n  display: block;\n  -webkit-perspective: none;\n  -moz-perspective: none;\n  -ms-perspective: none;\n  perspective: none;\n  -webkit-perspective-origin: 50% 50%;\n  /* there isn't a none/auto value but 50-50 is the default */\n  -moz-perspective-origin: 50% 50%;\n  -ms-perspective-origin: 50% 50%;\n  perspective-origin: 50% 50%; }\n\n.reveal .slides section {\n  page-break-after: always !important;\n  visibility: visible !important;\n  position: relative !important;\n  display: block !important;\n  position: relative !important;\n  margin: 0 !important;\n  padding: 0 !important;\n  box-sizing: border-box !important;\n  min-height: 1px;\n  opacity: 1 !important;\n  -webkit-transform-style: flat !important;\n  -moz-transform-style: flat !important;\n  -ms-transform-style: flat !important;\n  transform-style: flat !important;\n  -webkit-transform: none !important;\n  -moz-transform: none !important;\n  -ms-transform: none !important;\n  transform: none !important; }\n\n.reveal section.stack {\n  margin: 0 !important;\n  padding: 0 !important;\n  page-break-after: avoid !important;\n  height: auto !important;\n  min-height: auto !important; }\n\n.reveal img {\n  box-shadow: none; }\n\n.reveal .roll {\n  overflow: visible;\n  line-height: 1em; }\n\n/* Slide backgrounds are placed inside of their slide when exporting to PDF */\n.reveal section .slide-background {\n  display: block !important;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: -1; }\n\n/* All elements should be above the slide-background */\n.reveal section > * {\n  position: relative;\n  z-index: 1; }\n\n/* Display slide speaker notes when 'showNotes' is enabled */\n.reveal .speaker-notes-pdf {\n  display: block;\n  width: 100%;\n  max-height: none;\n  left: auto;\n  top: auto;\n  z-index: 100; }\n\n/* Display slide numbers when 'slideNumber' is enabled */\n.reveal .slide-number-pdf {\n  display: block;\n  position: absolute;\n  font-size: 14px; }\n"
 
 /***/ },
 /* 6 */
@@ -341,7 +238,7 @@
 		"./page_50.js": 12,
 		"./page_60.js": 13,
 		"./page_70.js": 14,
-		"./page_end.js": 5
+		"./page_end.js": 15
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -933,7 +830,110 @@
 /* 15 */
 /***/ function(module, exports) {
 
-	module.exports = "/**\n * This stylesheet is used to print reveal.js\n * presentations to PDF.\n *\n * https://github.com/hakimel/reveal.js#pdf-export\n */\n* {\n  -webkit-print-color-adjust: exact; }\n\nbody {\n  margin: 0 auto !important;\n  border: 0;\n  padding: 0;\n  float: none !important;\n  overflow: visible; }\n\nhtml {\n  width: 100%;\n  height: 100%;\n  overflow: visible; }\n\n/* Remove any elements not needed in print. */\n.nestedarrow,\n.reveal .controls,\n.reveal .progress,\n.reveal .playback,\n.reveal.overview,\n.fork-reveal,\n.share-reveal,\n.state-background {\n  display: none !important; }\n\nh1, h2, h3, h4, h5, h6 {\n  text-shadow: 0 0 0 #000 !important; }\n\n.reveal pre code {\n  overflow: hidden !important;\n  font-family: Courier, 'Courier New', monospace !important; }\n\nul, ol, div, p {\n  visibility: visible;\n  position: static;\n  width: auto;\n  height: auto;\n  display: block;\n  overflow: visible;\n  margin: auto; }\n\n.reveal {\n  width: auto !important;\n  height: auto !important;\n  overflow: hidden !important; }\n\n.reveal .slides {\n  position: static;\n  width: 100%;\n  height: auto;\n  left: auto;\n  top: auto;\n  margin: 0 !important;\n  padding: 0 !important;\n  overflow: visible;\n  display: block;\n  -webkit-perspective: none;\n  -moz-perspective: none;\n  -ms-perspective: none;\n  perspective: none;\n  -webkit-perspective-origin: 50% 50%;\n  /* there isn't a none/auto value but 50-50 is the default */\n  -moz-perspective-origin: 50% 50%;\n  -ms-perspective-origin: 50% 50%;\n  perspective-origin: 50% 50%; }\n\n.reveal .slides section {\n  page-break-after: always !important;\n  visibility: visible !important;\n  position: relative !important;\n  display: block !important;\n  position: relative !important;\n  margin: 0 !important;\n  padding: 0 !important;\n  box-sizing: border-box !important;\n  min-height: 1px;\n  opacity: 1 !important;\n  -webkit-transform-style: flat !important;\n  -moz-transform-style: flat !important;\n  -ms-transform-style: flat !important;\n  transform-style: flat !important;\n  -webkit-transform: none !important;\n  -moz-transform: none !important;\n  -ms-transform: none !important;\n  transform: none !important; }\n\n.reveal section.stack {\n  margin: 0 !important;\n  padding: 0 !important;\n  page-break-after: avoid !important;\n  height: auto !important;\n  min-height: auto !important; }\n\n.reveal img {\n  box-shadow: none; }\n\n.reveal .roll {\n  overflow: visible;\n  line-height: 1em; }\n\n/* Slide backgrounds are placed inside of their slide when exporting to PDF */\n.reveal section .slide-background {\n  display: block !important;\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  z-index: -1; }\n\n/* All elements should be above the slide-background */\n.reveal section > * {\n  position: relative;\n  z-index: 1; }\n\n/* Display slide speaker notes when 'showNotes' is enabled */\n.reveal .speaker-notes-pdf {\n  display: block;\n  width: 100%;\n  max-height: none;\n  left: auto;\n  top: auto;\n  z-index: 100; }\n\n/* Display slide numbers when 'slideNumber' is enabled */\n.reveal .slide-number-pdf {\n  display: block;\n  position: absolute;\n  font-size: 14px; }\n"
+	"use strict";
+
+	var page = React.createClass({
+		displayName: "page",
+
+		render: function render() {
+			return React.createElement(
+				"section",
+				{ className: "tl" },
+				React.createElement(
+					"h1",
+					null,
+					"THE END"
+				),
+				React.createElement(
+					"div",
+					null,
+					"\u53C2\u8003\u8D44\u6599"
+				),
+				React.createElement(
+					"div",
+					{ className: "col-layout" },
+					React.createElement(
+						"ul",
+						{ className: "col-6" },
+						React.createElement(
+							"li",
+							null,
+							"\u300AHTTP \u6743\u5A01\u6307\u5357\u300B"
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "http://blog.csdn.net/hguisu/article/details/8608888", target: "_blank" },
+								"HTTP\u8BE6\u89E3(3)-http1.0 \u548Chttp1.1 \u533A\u522B"
+							)
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "http://mrpeak.cn/blog/http2/", target: "_blank" },
+								"HTTP 2.0\u7684\u90A3\u4E9B\u4E8B"
+							)
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "https://www.zhihu.com/question/34074946", target: "_blank" },
+								"HTTP/2.0 \u76F8\u6BD41.0\u6709\u54EA\u4E9B\u91CD\u5927\u6539\u8FDB\uFF1F"
+							)
+						)
+					),
+					React.createElement(
+						"ul",
+						{ className: "col-6" },
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "http://www.jianshu.com/p/52d86558ca57/comments/3560156", target: "_blank" },
+								"\u9762\u8BD5\u65F6\u5982\u4F55\u4F18\u96C5\u7684\u8C08\u8BBAHTTP\uFF0F1.0\uFF0F1.1\uFF0F2.0"
+							)
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "http://www.alloyteam.com/2016/03/discussion-on-web-caching/", target: "_blank" },
+								"\u6D45\u8C08Web\u7F13\u5B58"
+							)
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "https://my.oschina.net/ososchina/blog/494074", target: "_blank" },
+								"HTTP 304/200(from cache) \u9759\u6001\u8D44\u6E90\u7F13\u5B58\u539F\u7406"
+							)
+						),
+						React.createElement(
+							"li",
+							null,
+							React.createElement(
+								"a",
+								{ href: "http://www.ruanyifeng.com/blog/2016/06/dns.html", target: "_blank" },
+								"DNS \u539F\u7406\u5165\u95E8"
+							)
+						)
+					)
+				)
+			);
+		}
+	});
+
+	module.exports = page;
 
 /***/ }
 /******/ ]);

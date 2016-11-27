@@ -27,4 +27,10 @@
 5. 凸显列表： `.nav-list`。列表的最后一项高亮，其它项灰色。
 
 ## 打印成 pdf
-加入 `print-pdf` 查询参数，然后访问，即可。例如：`http://localhost:3000/views_dev/http.html?print-pdf`
+1. 加入 `print-pdf` 查询参数，然后访问，即可。例如：`http://localhost:3000/views_dev/demo.html?print-pdf`
+2. 按快捷键：
+    - window 下：Ctrl + P
+    - Mac 下：Cmd + P
+3. 选择
+    - 边距：无
+    - 选项：背景图形（打勾）

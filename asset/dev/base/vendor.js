@@ -19421,7 +19421,7 @@ module.exports = warning;
 				// so that no page ever flows onto another
 				var page = document.createElement( 'div' );
 				page.className = 'pdf-page';
-				page.style.height = ( pageHeight * numberOfPages ) + 'px';
+				page.style.height = ( (pageHeight - 1) * numberOfPages ) + 'px';
 				slide.parentNode.insertBefore( page, slide );
 				page.appendChild( slide );
 

@@ -14,7 +14,7 @@ const config = alias.require('@config'),
 gulp.task('core.dev:hot', () => {
 	let serveCfg = {
 		ui: false,
-		startPath: '/views_dev/'
+		startPath: '/views_dev/demo.html'
 	};
 	if (typeof config.vhost === 'string' && config.vhost.trim().length > 1) {
 		serveCfg.proxy = config.vhost;
