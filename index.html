@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="React-ppt : a ppt framework build with react.js and reveal.js.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>React-ppt</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/CFDylan/react-ppt">View on GitHub</a>
+
+          <h1 id="project_title">React-ppt</h1>
+          <h2 id="project_tagline">a ppt framework build with react.js and reveal.js.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/CFDylan/react-ppt/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/CFDylan/react-ppt/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a id="搭环境" class="anchor" href="#%E6%90%AD%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>搭环境</h2>
+
+<ol>
+<li>下载完后，在项目的根目录，输入: <code>npm install</code>.</li>
+<li>使用的PPT插件（需要学习更多的，可以参考）：<a href="https://github.com/hakimel/reveal.js" title="reveal-js">https://github.com/hakimel/reveal.js</a>
+</li>
+</ol>
+
+<h2>
+<a id="使用" class="anchor" href="#%E4%BD%BF%E7%94%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>使用</h2>
+
+<ol>
+<li>
+<p>新建一个ppt。在项目根目录用命令行输入：</p>
+
+<p><code>gulp new --page {pptName}</code></p>
+</li>
+<li>新建后，会生成 <code>src/page/[pptName]</code> 目录，我们主要看 js 目录下的文件：
+
+<ol>
+<li>
+<code>index.js</code>, 入口文件</li>
+<li>
+<code>page_00.js</code>, PPT的第0页</li>
+<li>
+<code>page_10.js</code>, PPT的第1页</li>
+<li>
+<code>page_end.js</code>, PPT的最后1页</li>
+<li>
+<code>reveal.config.js</code>, PPT的配置</li>
+</ol>
+</li>
+<li>如果你需要新增 PPT 页面，请用 <code>page_xx.js</code> 命名，这样，生成最终 PPT 的时候会自动根据 xx 升序依赖。</li>
+<li>那么，怎么让PPT可以在浏览器看呢？
+
+<ol>
+<li>方法一，手动编译： <code>gulp dev</code>。编译完之后，就可以打开<code>views_dev/[pptName].html</code>在浏览器查看效果了。</li>
+<li>方法二，实时编译： <code>gulp dev -h</code> . 这个时候，浏览器会打开 <code>localhost:3000/views_dev/</code>. 然后，你输入你要看的PPT名字，如： <code>localhost:3000/views_dev/[pptName].html</code>
+</li>
+</ol>
+</li>
+</ol>
+
+<h2>
+<a id="现有样式" class="anchor" href="#%E7%8E%B0%E6%9C%89%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>现有样式</h2>
+
+<p>具体可以查看 <code>package/templates/page.scss</code>，这里介绍常用的5个：</p>
+
+<ol>
+<li>标题：h1~h6</li>
+<li>class="fragment" 的块，会被分块展示。</li>
+<li>弹性盒子布局： <code>.flex-layout</code> 及其一个弹性子元素 <code>.flex</code>
+</li>
+<li>经典12列布局： <code>.col-layout</code> 及其子元素 <code>.col-N</code>（N取值：1~12）</li>
+<li>凸显列表： <code>.nav-list</code>。列表的最后一项高亮，其它项灰色。</li>
+</ol>
+
+<h2>
+<a id="打印成-pdf" class="anchor" href="#%E6%89%93%E5%8D%B0%E6%88%90-pdf" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>打印成 pdf</h2>
+
+<ol>
+<li>加入 <code>print-pdf</code> 查询参数，然后访问，即可。例如：<code>http://localhost:3000/views_dev/demo.html?print-pdf</code>
+</li>
+<li>按快捷键：
+
+<ul>
+<li>window 下：Ctrl + P</li>
+<li>Mac 下：Cmd + P</li>
+</ul>
+</li>
+<li>选择
+
+<ul>
+<li>边距：无</li>
+<li>选项：背景图形（打勾）</li>
+</ul>
+</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">React-ppt maintained by <a href="https://github.com/CFDylan">CFDylan</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
